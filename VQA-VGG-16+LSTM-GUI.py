@@ -247,7 +247,7 @@ class VQA_demo(QtGui.QWidget):
         labelencoder = joblib.load(label_encoder_file_name)
         self.result=[]
         for label in reversed(y_sort_index[0,-5:]):
-            print str(round(y_output[0,label]*100,2)).zfill(5)+ " % "+ labelencoder.inverse_transform(label)
+            print (str(round(y_output[0,label]*100,2)).zfill(5)+ " % "+ labelencoder.inverse_transform(label))
             cmd=str(round(y_output[0,label]*100,2)).zfill(5)+ " % "+ labelencoder.inverse_transform(label)
 #            stdouterr = os.popen4(cmd)[1].read()
             self.result.append(cmd)
